@@ -1,7 +1,9 @@
 import React from 'react'
 
 import "./Navbar.css";
+
 import logo2 from "../Logo/logo2.png";
+
 export default function Navbar() {
   return (
     <div>
@@ -15,7 +17,12 @@ export default function Navbar() {
    
         <div className='header__column header__column--left'>
        <div className='header__item header__item--link header__item--current-link header__item--hide-mobile' >
-     <a class="header__item__link" data-click-action="track" data-event-category="Header" data-event-label="Home" data-event-action="click" href="/">
+     <a class="header__item__link" 
+     data-click-action="track" 
+     data-event-category="Header" 
+     data-event-label="Home" 
+     data-event-action="click" 
+     href="/">
             Home
             {/* ::after */}
       </a>
@@ -23,13 +30,26 @@ export default function Navbar() {
         </div>
         
         <div className="header__item header__item--link  header__item--hide-mobile">
-        <a class="header__item__link" data-click-action="track" data-event-category="Header" data-event-label="Books" data-event-action="click" href="/">Books</a>
+        <a class="header__item__link" 
+        data-click-action="track" 
+        data-event-category="Header" 
+        data-event-label="Books" 
+        data-event-action="click" 
+        href="/">
+            Books
+            </a>
          
         </div>
         
 
          <div class="header__item header__item--link  header__item--hide-mobile">
-          <a class="header__item__link" data-click-action="track" data-event-category="Header" data-event-label="Add Books" data-event-action="click" href="/blog">Add Books</a>
+          <a class="header__item__link" 
+          data-click-action="track" 
+          data-event-category="Header" 
+          data-event-label="Add Books" 
+          data-event-action="click" 
+          href="/">
+            Add Books</a>
           
         </div>
         </div>
@@ -39,8 +59,16 @@ export default function Navbar() {
        <a class="header__item__logo" href="/"><img src={logo2} alt="What to read Next??" /></a>
 
 
+
+
       </div>
     </div>
+{/* <div className='header__column header__column--right'>
+    <h3> We provide Stories from untapped,unsignes and talented Writers</h3>
+    </div> */}
+
+    
+   
     
      
      
