@@ -1,12 +1,13 @@
 import React from 'react'
 
 import "./Navbar.css";
+import Nav from 'react-bootstrap';
 
-import logo2 from "../Logo/logo2.png";
+import logo2 from '../Logo/logo2.png';
 
 export default function Navbar() {
   return (
-    <div>
+    <nav >
            
            <div className="header" id='header'>
             <div className='header-top'>
@@ -15,8 +16,10 @@ export default function Navbar() {
                         
   
    
-        <div className='header__column header__column--left'>
-       <div className='header__item header__item--link header__item--current-link header__item--hide-mobile' >
+    <div className='header__column header__column--left'>
+    <div className='header__item header__item--link header__item--current-link header__item--hide-mobile' >
+     
+     
      <a class="header__item__link" 
      data-click-action="track" 
      data-event-category="Header" 
@@ -35,7 +38,7 @@ export default function Navbar() {
         data-event-category="Header" 
         data-event-label="Books" 
         data-event-action="click" 
-        href="/">
+        href="/Books">
             Books
             </a>
          
@@ -48,7 +51,7 @@ export default function Navbar() {
           data-event-category="Header" 
           data-event-label="Add Books" 
           data-event-action="click" 
-          href="/">
+          href="/AddBooks">
             Add Books</a>
           
         </div>
@@ -84,7 +87,7 @@ export default function Navbar() {
 
 
 
-    </div>
+  </nav>
     
   )
 }
