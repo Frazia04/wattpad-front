@@ -15,14 +15,14 @@ function AddBooks() {
   let navigate=useNavigate()
 
   const[books,setBooks]=useState({
-    Name:"",
-    Genre:"",
-    Author:"",
-    Review:""
+    name:"",
+    genre:"",
+    author:"",
+    review:""
   })
 
 
-const{Name,Genre,Author,Review}=books
+const{name,genre,author,review}=books
  
   const loadBooks=async(e) =>
   {
@@ -56,8 +56,8 @@ const{Name,Genre,Author,Review}=books
     <input
      type="name" 
      class="form-control" 
-     name = "Name" 
-     value={books.Name} 
+     name = "name" 
+     value={books.name} 
      id="exampleFormControlInput1" 
      placeholder="Name" required 
      onChange={handleinputs}></input>
@@ -75,7 +75,7 @@ const{Name,Genre,Author,Review}=books
       <div className="mb-2"></div>
       <input
        type="radio" 
-       name="Genre"
+       name="genre"
         value="fiction" 
         onChange={handleinputs}>
        </input>
@@ -91,7 +91,7 @@ const{Name,Genre,Author,Review}=books
             <label class="radio-inline">
             <input 
             type="radio" 
-            name="Genre" 
+            name="genre" 
             value="non-fiction"
              onChange={handleinputs} >
             </input>
@@ -119,8 +119,8 @@ const{Name,Genre,Author,Review}=books
   <input 
   type="text" 
   class="form-control" 
-  name="Author"
-  value={books.Author}
+  name="author"
+  value={books.author}
   placeholder="Author" 
 
   aria-label="Author"  
@@ -136,12 +136,19 @@ const{Name,Genre,Author,Review}=books
   <div className="mb-3">
   
     
-    {/* <label for="exampleFormControlTextarea1">Method</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" required></textarea> */} 
+    
   <label for="exampleFormControlTextarea1">Review</label>
   <div className="mb-2"></div>
  
-  <input type="text" class="form-control" placeholder="Review" aria-label="Review"  required ></input>
+  <input type="text" 
+  class="form-control" 
+  name="review"
+  value={books.review}
+  placeholder="Review" 
+  aria-label="Review"  
+  required 
+    onChange={handleinputs}>
+  </input>
 
 
   </div> 

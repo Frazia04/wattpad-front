@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Books() {
 
-    const[books,setBooks]=useState([])
+    const[books,setbooks]=useState([])
 
     useEffect(()=>{
        loadBooks();
@@ -16,7 +16,7 @@ export default function Books() {
 
     const loadBooks=async()=>{
         const result=await axios.get("http://localhost:8080/books")
-        setBooks(result.data);
+        setbooks(result.data);
         console.log(result.data);
     }
 
@@ -41,32 +41,24 @@ export default function Books() {
   </thead>
   <tbody>
     {
-        books.map((books,index)=>{
+        books.map((books,index)=>(
             <tr>
             <th scope="row" key={index}>{index+1}</th>
-            <td>{books.Name}</td>
-            <td>{books.Genre}</td>
-            <td>{books.Author}</td>
-            <td>{books.Review}</td>
+            <td>{books.name}</td>
+            <td>{books.genre}</td>
+            <td>{books.author}</td>
+            <td>{books.review}</td>
           </tr> 
 
-        })
+        ))
     }
     
-    
   </tbody>
-
-        </table>
-    </div>
-    </div>
+ </table>
+  </div>
+  </div>
 </Container>
-
-
-
-   
-
-
-  )
+  );
 }
   
 
