@@ -1,27 +1,33 @@
 //form
 
 
-import React , { useState} from "react";
+import React , { useEffect, useState} from "react";
 import axios from "axios";
+
 import Homepage from "./pages/Homepage";
 import Navbar from "./Navigation/Navbar";
 // import "./AddBooks.css";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 // import { Button } from "react-bootstrap";
 
-function AddBooks() {
+function EditBooks() {
 
 
 
   let navigate=useNavigate()
 
+  const {bookid}= useParams();
+
   const[books,setBooks]=useState({
+
+    
     name:"",
     genre:"",
     author:"",
     review:""
+
   })
 
 
@@ -42,14 +48,23 @@ const{name,genre,author,review}=books
    console.log(books);
   }
 
+  useEffect(()=>{
+    loadBooks()
+  }, []);
+
   const onSubmit= async(e)=>{
 
     e.preventDefault();
       console.log(books);
-      const result=await axios.post("http://localhost:8080/book",books) 
+      await axios.put(`http://localhost:8080/book/${bookid}`,books) 
       navigate("/Books")
-      console.log(result.data);
+     
   };
+
+  const loadBooks = async () => {
+    const result= await axios.get(`http://localhost:8080/book/${bookid}`)
+    setBooks(result.data);
+  }
   
 
 
@@ -59,16 +74,16 @@ const{name,genre,author,review}=books
 
       
       <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow " style={{backgroundColor: 'white'} }>
-      <h2 className ="text-center m-4">Add Books</h2>
-    <form  onSubmit={(e)=>onSubmit(e)}>
+
+    <form onSubmit={(e)=>onSubmit(e)}>
 
   <div className="form-group">
     
-      
+      <h2 className ="text-center m-4">Edit Books</h2>
 
       <div className="mb-3">
     <label for="exampleFormControlInput1">Name</label>
-    <div className="mb-2"  ></div>
+    <div className="mb-2"></div>
     <input
      type={"name" }
      class="form-control" 
@@ -82,7 +97,7 @@ const{name,genre,author,review}=books
   </div>
   
  
-  <div class="form-group">
+  <div class="form-check">
   
   
     {
@@ -91,7 +106,7 @@ const{name,genre,author,review}=books
       <label class="radio-inline">Genre<br></br>
       <div className="mb-2"></div>
       <input
-    
+      className="form-check-input"
        type="radio" 
        name="genre"
         value="fiction" 
@@ -111,7 +126,7 @@ const{name,genre,author,review}=books
             type="radio" 
             name="genre" 
             value="non-fiction"
-             onChange={(e)=>handleinputs(e)}>
+             onChange={(e)=>handleinputs(e)} >
             </input>
             Non-Fiction
             </label>}
@@ -165,7 +180,7 @@ const{name,genre,author,review}=books
   placeholder="Review" 
   aria-label="Review"  
   required 
-    onChange={(e)=>handleinputs(e)}>
+  onChange={(e)=>handleinputs(e)}>
   </input>
 
 
@@ -194,10 +209,10 @@ const{name,genre,author,review}=books
   </button>
   
  
-  <Link
-   className="btn btn-outline-danger mx-2"  style={{textDecoration: 'none'}}  to ="/Books">
+  <button
+   className="btn btn-outline-danger mx-2" to ="/Books">
     Cancel
-    </Link>
+    </button>
   </div>
 
   
@@ -217,4 +232,4 @@ const{name,genre,author,review}=books
   )
 }
 
-export default AddBooks;
+export default EditBooks;

@@ -1,0 +1,11 @@
+.form-group{
+    height: auto;
+    width: 60%; 
+    background-color: rgb(255, 255, 255);
+    margin:0px;
+    padding: 0px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+
+  
+}
