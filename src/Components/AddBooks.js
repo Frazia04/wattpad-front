@@ -95,7 +95,7 @@ const{name,genre,author,review}=books
        type="radio" 
        name="genre"
         value="fiction" 
-        onChange={(e)=>handleinputs(e)}>
+        onChange={handleinputs}>
        </input>
         Fiction
         </label>
@@ -111,7 +111,7 @@ const{name,genre,author,review}=books
             type="radio" 
             name="genre" 
             value="non-fiction"
-             onChange={(e)=>handleinputs(e)}>
+             onChange={handleinputs}>
             </input>
             Non-Fiction
             </label>}
@@ -143,7 +143,7 @@ const{name,genre,author,review}=books
 
   aria-label="Author"  
   required aria-describedby="button-addon2"
-   onChange={(e)=>handleinputs(e)}>
+   onChange={handleinputs}>
   </input>
 
  
@@ -165,7 +165,7 @@ const{name,genre,author,review}=books
   placeholder="Review" 
   aria-label="Review"  
   required 
-    onChange={(e)=>handleinputs(e)}>
+    onChange={handleinputs}>
   </input>
 
 

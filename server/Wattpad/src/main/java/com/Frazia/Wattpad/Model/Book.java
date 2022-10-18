@@ -16,41 +16,41 @@ package com.Frazia.Wattpad.Model;
 		@Id
 		@GeneratedValue
 		
-		private long Bookid;
-		private String Name;
-		private String Genre;
-		private String Author ;
-		private String Review;
+		private long bookid;
+		private String name;
+		private String genre;
+		private String author ;
+		private String review;
 		
-		public long getBookid() {
-			return Bookid;
+		public long getbookid() {
+			return bookid;
 		}
-		public void setPostid(long Bookid) {
-			this.Bookid= Bookid;
+		public void setbookid(long bookid) {
+			this.bookid= bookid;
 		}
-		public String getName() {
-			return Name;
+		public String getname() {
+			return name;
 		}
-		public void setName(String Name) {
-			this.Name = Name;
+		public void setname(String name) {
+			this.name = name;
 		}
-		public String getGenre() {
-			return Genre;
+		public String getgenre() {
+			return genre;
 		}
-		public void setGenre( String Genre) {
-			this.Genre = Genre;
+		public void setGenre( String genre) {
+			this.genre = genre;
 		}
-		public String getAuthor() {
-			return Author;
+		public String getauthor() {
+			return author;
 		}
-		public void setAuthor(String Author) {
-			this.Author = Author;
+		public void setauthor(String author) {
+			this.author = author;
 		}
-		public String getReview() {
-			return Review;
+		public String getreview() {
+			return review;
 		}
-		public void setReview(String Review) {
-			this.Review = Review;
+		public void setreview(String review) {
+			this.review = review;
 		}
 		
 		
